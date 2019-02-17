@@ -163,9 +163,9 @@ export class ModelOverlayQuorumComponent implements OnInit {
         // this.showResponse(this.fileUploadResponse);
         this.msgs = [];
         if (this.fileUploadResponse[0].address == "0x") {
-          this.msgs.push({ severity: 'error', summary: 'The contract could not be deployed successfully...' });
+          this.msgs.push({ severity: 'error', summary: '合约部署失败...' });
         } else {
-          this.msgs.push({ severity: 'success', summary: 'Contract has been deployed sucessfully...' });
+          this.msgs.push({ severity: 'success', summary: '合约部署成功...' });
         }
         // this.display = false;
         // this.showOverlay.emit(false);

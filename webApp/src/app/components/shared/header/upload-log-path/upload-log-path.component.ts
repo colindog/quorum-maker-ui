@@ -82,7 +82,7 @@ export class UploadLogPathComponent implements OnInit {
         //this.mesgshow.push({ severity: 'error', summary: 'There is an error in file uploading' });
         this.loadingForm = false;
         this.displayUploadLogs = false;
-        this.closeUploadLogsMsg.emit({modal: false, msg: 'There is an error in file uploading...'});
+        this.closeUploadLogsMsg.emit({modal: false, msg: '上传文件失败...'});
       }, 3000);
     });
   }

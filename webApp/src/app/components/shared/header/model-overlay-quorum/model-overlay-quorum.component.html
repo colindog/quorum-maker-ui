@@ -3,19 +3,19 @@
   <p-dialog [(visible)]="display" [modal]="true" [responsive]="true" [width]="760" [minWidth]="200" [minY]="70" closeOnEscape="true"
     dismissableMask="true" (onHide)="onClose()">
     <p-header class="header">
-      <h2>Compile & Deploy Contracts</h2>
+      <h2>编译&部署合约</h2>
     </p-header>
     <!-- <div class="p-dialog-inner" [ngClass]="showResponse == true ? 'height277' :''"> -->
     <div class="p-dialog-inner">
       <form novalidate [formGroup]="CompileDeployContractForm" (ngSubmit)="contractSubmit()" *ngIf="showResponse">
         <div class="row compileDeploy">
           <div class="col-md-12 form-group">
-            <h4>CHOOSE CONTRACT FILE</h4>
+            <h4>选择合约文件</h4>
             <div class="custom-upload">
               <input name="file" type="file" multiple id="chooseFile" formControlName="contractfile" class="form-control" (change)="onFileChange($event)">
               <div class="fake-file">
                 <input disabled="disabled">
-                <button>Choose File</button>
+                <button>选择文件</button>
               </div>
               <ul class="fileList">
                 <li class="listSpace" *ngFor="let file of filesToUpload">
@@ -30,7 +30,7 @@
         <div class="row compileDeploy">
           <!-- <div class="col-md-12 form-group" [ngClass]="displayFieldCssContract('networkRole')"> -->
           <div class="col-md-12 form-group">
-            <h4 for="networkRole">NETWORK PARTICIPANTS</h4>
+            <h4 for="networkRole">网络成员</h4>
             <p-multiSelect [options]="networkRoleNodeListNew" formControlName="networkRole" [style]="{'width':'100%'}" placeholder="Select a Network Role"
               optionLabel="nodeName"></p-multiSelect>
             <!-- <span class="errorMsg">{{customMgs?.customMessageContract?.networkRole}}</span> -->
@@ -39,7 +39,7 @@
         <div class="row form-footer">
           <div class="col-md-12 form-group">
             <button type="submit" [disabled]="CompileDeployContractForm.invalid || CompileDeployContractForm.pristine || disabled " (click)="contractSubmit(CompileDeployContractForm.value)"
-              class="btn btn-green pull-right">SUBMIT</button>
+              class="btn btn-green pull-right">提交</button>
           </div>
         </div>
       </form>
@@ -82,7 +82,7 @@
           </div>
           <div class="col-md-12" *ngIf="!ShowLoader">
             <div class="form-group">
-              <button type="submit" class="btn btn-green pull-right" (click)="gotResponse()" [disabled]="!isResponseReceived">Close</button>
+              <button type="submit" class="btn btn-green pull-right" (click)="gotResponse()" [disabled]="!isResponseReceived">关闭</button>
             </div>
           </div>
         </div>

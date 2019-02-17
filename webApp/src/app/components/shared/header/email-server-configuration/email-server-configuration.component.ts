@@ -70,7 +70,7 @@ export class EmailServerConfigurationComponent implements OnInit {
 
       this._CommonService.emailServerConfig(params).subscribe(data => {
         this.msgs = [];
-        this.msgs.push({ severity: 'success', summary: 'Success Message', detail: 'Email Server Configuration has created Successfully' });
+        this.msgs.push({ severity: 'success', summary: 'Success Message', detail: '邮件服务器配置成功' });
         console.log('Email Server Configuration has been created...');
         console.log('this.msgs.....>', this.msgs);
 
@@ -83,7 +83,7 @@ export class EmailServerConfigurationComponent implements OnInit {
       },
         error => {
           this.msgs = [];
-          this.msgs.push({ severity: 'error', summary: '', detail: 'Email Server Configuration Failed!' });
+          this.msgs.push({ severity: 'error', summary: '', detail: '邮件服务器配置失败!' });
           console.log('error', error);
 
         }

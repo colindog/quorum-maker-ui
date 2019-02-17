@@ -9,39 +9,39 @@
             <form novalidate class="form-wrapper-inner" [formGroup]="deployContractABI" *ngIf="!loadingForm">
                 <div class="row compileDeploy">
                     <div class="col-md-6 form-group">
-                        <label>Name</label>
+                        <label>名称</label>
                         <input name="name" type="text" [readonly]="contractFlag" id="name" formControlName="name" class="form-control">
                     </div>
                     <div class="col-md-6 form-group">
-                        <label>Address</label>
+                        <label>地址</label>
                         <input name="address" readonly type="text" id="address" formControlName="address" class="form-control">
                     </div>
                     <div class="col-md-6 form-group" *ngIf="contractFlag">
-                        <label>Deployment Date</label>
+                        <label>部署日期</label>
                         <input name="name" type="text" [readonly]="contractFlag" value="{{contractAbi?.timestamp * 1000 | date : 'medium'}}" class="form-control">
                     </div>
                     <div class="col-md-6 form-group" *ngIf="contractFlag">
-                        <label>Sender</label>
+                        <label>发送者</label>
                         <input name="address" [readonly]="contractFlag" type="text" value="{{contractAbi?.sender}}" class="form-control">
                     </div>
                     <div class="col-md-12 form-group">
-                        <label>Description</label>
+                        <label>描述</label>
                         <input name="description" type="text" [readonly]="contractFlag" id="description" formControlName="description" class="form-control">
                     </div>
                     <div class="col-md-12 form-group" *ngIf="!contractFlag">
-                        <label>Choose ABI File</label>
+                        <label>选择ABI文件</label>
                         <div class="custom-upload">
                             <input name="file" type="file" id="selectFile" formControlName="selectFile" class="form-control" (change)="onSelectFile($event)">
                         </div>
                     </div>
                     <div class="col-md-12 form-group" *ngIf="contractFlag">
-                        <label>ABI File</label>
+                        <label>ABI文件</label>
                         <textarea class="w100per form-control" row="4" readonly>{{contractAbi.abi}}</textarea>
                     </div>
                 </div>
                 <div class="row form-footer" *ngIf="!contractFlag">
                     <div class="col-md-12 form-group">
-                        <button type="submit" [disabled]="deployContractABI.invalid" (click)="submitForm(deployContractABI.value)" class="btn btn-green pull-right">SUBMIT</button>
+                        <button type="submit" [disabled]="deployContractABI.invalid" (click)="submitForm(deployContractABI.value)" class="btn btn-green pull-right">提交</button>
                     </div>
                 </div>
             </form>

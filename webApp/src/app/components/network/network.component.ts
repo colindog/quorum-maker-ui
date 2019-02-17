@@ -99,7 +99,7 @@ export class NetworkComponent implements OnInit {
 
       this._CommonService.createNetwork(params).subscribe(data => {
         this.msgs = [];
-        this.msgs.push({ severity: 'success', summary: 'Success Message', detail: 'Network has created successfully' });
+        this.msgs.push({ severity: 'success', summary: 'Success Message', detail: '网络创建成功!' });
         console.log('Network has been created...');
         console.log('this.msgs.....>', this.msgs);
 
@@ -110,7 +110,7 @@ export class NetworkComponent implements OnInit {
       },
         error => {
           this.msgs = [];
-          this.msgs.push({ severity: 'error', summary: '', detail: 'Network Creation Failed!' });
+          this.msgs.push({ severity: 'error', summary: '', detail: '网络创建失败!' });
           console.log('error', error);
 
         }
@@ -141,7 +141,7 @@ export class NetworkComponent implements OnInit {
 
       this._CommonService.joinNetwork(params).subscribe(data => {
         this.msgs = [];
-        this.msgs.push({ severity: 'success', summary: 'Success Message', detail: 'Network has joined successfully' });
+        this.msgs.push({ severity: 'success', summary: 'Success Message', detail: '网络加入成功' });
         console.log('Network has joined...');
         console.log('this.msgs.....>', this.msgs);
 
@@ -152,7 +152,7 @@ export class NetworkComponent implements OnInit {
       },
         error => {
           this.msgs = [];
-          this.msgs.push({ severity: 'error', summary: '', detail: 'Network joining Failed!' });
+          this.msgs.push({ severity: 'error', summary: '', detail: '网络加入失败!' });
           console.log('error', error);
 
         }

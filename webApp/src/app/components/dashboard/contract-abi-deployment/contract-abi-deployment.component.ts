@@ -26,9 +26,9 @@ export class ContractAbiDeploymentComponent implements OnInit {
     this.createForm();
     //updateContractDetails 
     if(this.contractFlag){
-      this.title = "Contract Details";
+      this.title = "合约详情";
     } else{
-      this.title = "Update/Upload Contract Details";
+      this.title = "升级/上传合约详情";
     }
   }
 
@@ -94,7 +94,7 @@ export class ContractAbiDeploymentComponent implements OnInit {
         //this.mesgshow.push({ severity: 'error', summary: 'There is an error in file uploading' });
         this.loadingForm = false;
         this.contractAbiDisplay = false;
-        this.closeEventABI.emit({modal: false, msg: 'There is an error in file uploading...'});
+        this.closeEventABI.emit({modal: false, msg: '上传文件出错...'});
       }, 3000);
     });
   }

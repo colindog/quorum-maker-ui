@@ -2,20 +2,20 @@
   <p-dialog [(visible)]="displayWhitelist" [modal]="true" [responsive]="true" [width]="600" [height]="510" draggable="true"
     closeOnEscape="true" dismissableMask="true" (onHide)="onClose()">
     <p-header class="header">
-      <h2>Whitelist </h2>
+      <h2>白名单 </h2>
     </p-header>
     <div class="p-dialog-inner">
       <div class="ip-boxer">
         <div class="ip-top">
           <div class="form-group row" *ngIf="whitelists?.length > 0 || hideAddNewBtn == true">
-            <label class="col-md-3">Add New Ip</label>
+            <label class="col-md-3">添加新Ip</label>
             <!-- <p-inputMask [(ngModel)]="listItems" required=true class="form-control col-md-5" mask="99.99.99.999"></p-inputMask> -->
             <input type="text" [required]="true" class="form-control col-md-5" [(ngModel)]="listItems">
-            <button type="button" class="btn btn-green col-md-3" (click)="addWhiteListIp(listItems)">Add</button>
+            <button type="button" class="btn btn-green col-md-3" (click)="addWhiteListIp(listItems)">添加</button>
           </div>
           <div class="v-scrollbar">
             <div *ngIf="whitelists">
-              <h3 *ngIf="whitelists?.length > 0">Whitelisted IPs</h3>
+              <h3 *ngIf="whitelists?.length > 0">白名单IP</h3>
               <div class="ip-row">
                 <ul class="list-unstyled list-ips">
                   <li *ngFor="let item of whitelists;let i = index">
@@ -30,21 +30,21 @@
             </div>
             <div class="ip-bottom text-center">
               <div class="btn-group">
-                <button type="button" class="btn btn-green" *ngIf="hideAddNewBtn != true" (click)="addNewWhiteListIp()">Add New Ip</button>
+                <button type="button" class="btn btn-green" *ngIf="hideAddNewBtn != true" (click)="addNewWhiteListIp()">添加新IP</button>
                 <button type="button" *ngIf="whitelists?.length > 0 || enableBtnForDeleted || hideAddNewBtn == true" [disabled]="disableSave()"
-                  class="btn btn-green btn-footer" (click)="updateWhiteListIp()">Save</button>
+                  class="btn btn-green btn-footer" (click)="updateWhiteListIp()">保存</button>
               </div>
             </div>
             <hr>
             <div *ngIf="connectedList">
-              <h3>Connected Node IPs</h3>
+              <h3>已连节点IP列表</h3>
               <div class="table-responsive">
                 <table class="table">
                   <thead>
                     <tr>
                       <th></th>
-                      <th>IP Address</th>
-                      <th>Connected Node Count</th>
+                      <th>IP地址</th>
+                      <th>节点数量</th>
                     </tr>
                   </thead>
                   <tbody>

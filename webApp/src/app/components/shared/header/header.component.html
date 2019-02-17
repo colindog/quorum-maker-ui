@@ -12,34 +12,34 @@
     <ul class="nav navbar-nav ">
       <li class="logs">
         <div>
-          <em>Logs:&nbsp;</em>
-          <a href='/geth/' target="_blank" title="Geth">Geth</a> |
-          <a href='/constellation/' target="_blank" title="Consetellation">Constellation</a>
+          <em>日志:&nbsp;</em>
+          <a href='/geth/' target="_blank" title="Geth">节点</a> |
+          <a href='/constellation/' target="_blank" title="Consetellation">隐私</a>
         </div>
       </li>
       <li class="compile-deploy">
-        <a href="javascript:void(0)" (click)="emailServerConfig()">Email Server Configuration</a>
+        <a href="javascript:void(0)" (click)="emailServerConfig()">邮件服务器设置</a>
       </li>
       <li class="compile-deploy">
-        <a href="javascript:void(0)" (click)="compileAndDeployContracts()">Compile & Deploy Contracts</a>
+        <a href="javascript:void(0)" (click)="compileAndDeployContracts()">编译&部署合约</a>
       </li>
       <li class="compile-deploy">
-        <a href="javascript:void(0)" (click)="displayAccounts()">Accounts</a>
+        <a href="javascript:void(0)" (click)="displayAccounts()">账户</a>
       </li>
       <li class="compile-deploy">
-        <a href="javascript:void(0)" (click)="displayWhitelists()">Whitelist</a>
+        <a href="javascript:void(0)" (click)="displayWhitelists()">白名单</a>
       </li>
       <li class="dropdown dropdown-click" *ngIf="pendingRequest?.length > 0">
         <img src="/assets/images/crossroad.png" (click)="toggle()">
         <span class="count">{{pendingRequest?.length}}</span>
         <div class="dropdown-menu-list animated" *ngIf="show" (window:click)="autoClose($event)">
-          <h2>Pending Request for join Network</h2>
+          <h2>待处理加入请求</h2>
           <div class="dropdown-inner" [ngClass]="pendingRequest?.length >= 5 ? 'vscroll' : '' ">
             <ul>
               <li *ngFor="let item of pendingRequest" [popover]="myPopover" [popoverOnHover]="true">
                 <span>{{item?.nodeName}}</span>
-                <a class="reject" (click)="submitStatus(item, 'NO')">reject</a>
-                <a class="accept" (click)="submitStatus(item, 'YES')">Accept</a>
+                <a class="reject" (click)="submitStatus(item, 'NO')">拒绝</a>
+                <a class="accept" (click)="submitStatus(item, 'YES')">同意</a>
                 <popover-content #myPopover placement="left" [animation]="true" class="popover-list">
                   <span>
                     <strong>Message:</strong>

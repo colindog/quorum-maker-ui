@@ -3,14 +3,14 @@
     dismissableMask="true" (onHide)="onClose()">
 
     <p-header class="header">
-      <h2>Accounts</h2>
+      <h2>账户</h2>
     </p-header>
     <div class="p-dialog-inner">
       <div class="row">
-        <label class="col-md-4 float-left">Create New Account:</label>
+        <label class="col-md-4 float-left">新建账户:</label>
         <input type="password" placeholder="Enter Password Here" class="form-control col-md-5 float-left" [(ngModel)]="pwdAccount">
         <div class="col-md-3 float-left">
-          <button type="button" class="btn btn-green" (click)="addAccount(pwdAccount)">Submit</button>
+          <button type="button" class="btn btn-green" (click)="addAccount(pwdAccount)">提交</button>
         </div>
       </div>
       <hr/>
@@ -22,8 +22,8 @@
                 <th>
                   &nbsp;
                 </th>
-                <th>Account Address</th>
-                <th>Balance</th>
+                <th>账户地址</th>
+                <th>余额</th>
               </tr>
             </thead>
             <tbody>

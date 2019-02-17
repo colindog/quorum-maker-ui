@@ -612,7 +612,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
       datasets: [
         {
-          label: 'Blocks',
+          label: '区块',
           backgroundColor: '#f8e71c',
           //borderColor: '#1E88E5',
           data: this.blockCount.slice(-10)
@@ -620,7 +620,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         },
 
         {
-          label: 'Transactions',
+          label: '交易',
           backgroundColor: '#f6434e',
           //borderColor: '#7CB342',
           data: this.transactionCount.slice(-10)

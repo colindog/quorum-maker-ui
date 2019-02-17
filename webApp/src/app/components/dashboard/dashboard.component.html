@@ -4,25 +4,25 @@
         <div class="col-md-12">
             <div class="rect-block block-box-wrapper" [ngClass]="(isSelected == 'blockClass')?'active':''" (click)="isShowCont('getBlocks')">
                 <div class="rect-block-inner">
-                    <h5>Current Block Number</h5>
+                    <h5>区块高度</h5>
                     <!-- <h3>{{latestBlockData?.latestBlockNumber}}</h3> -->
                     <p class="block-number-size" [ngClass]="{'updated-block-number-size': (latestBlockData?.latestBlockNumber > 99999)}">
                         <ng2-odometer [number]="latestBlockData?.latestBlockNumber" [config]="{ auto: true }" [theme]="'default'" [format]="'(,ddd)'"></ng2-odometer>
                     </p>
                     <p [ngClass]="{'updated-margin': (latestBlockData?.latestBlockNumber > 99999)}">
-                        <strong>Last Block :</strong>
-                        <span>{{latestTimeElapsedToDisplay}} ago</span>
+                        <strong>最新区块 :</strong>
+                        <span>{{latestTimeElapsedToDisplay}} 之前</span>
                     </p>
                 </div>
             </div>
             <div class="rect-block last" [ngClass]="(isSelected == 'nodeClass')?'active':''" (click)="isShowCont('nodeManager')">
                 <div class="rect-block-inner">
-                    <h5 class="active-node">Active Nodes</h5>
+                    <h5 class="active-node">有效节点</h5>
                     <h3 class="active-node">
                         <ng2-odometer [number]="getActiveNode?.nodeCount" [config]="{ auto: true }" [theme]="'default'" [format]="'(,ddd)'"></ng2-odometer>
                     </h3>
                     <p>
-                        <strong>Total Network Nodes :</strong>
+                        <strong>节点总数 :</strong>
                         <span>{{getActiveNode?.totalNodeCount}}</span>
                     </p>
                 </div>
@@ -42,18 +42,18 @@
             <div class="ip-address" [ngClass]="(isSelected == 'ipClass')?'active':''" (click)="isShowCont('ipBlocks')">
                 <div class="inner">
                     <h3>
-                        <span>Total Contracts</span>
+                        <span>运行合约</span>
                         <ng2-odometer [number]="contractCount?.totalContracts" [config]="{ auto: true }" [theme]="'default'" [format]="'(,ddd)'"></ng2-odometer>
                     </h3>
                     <h3>
-                        <span>ABI Available</span>
+                        <span>可用合约</span>
                         <ng2-odometer [number]="contractCount?.abis" [config]="{ auto: true }" [theme]="'default'" [format]="'(,ddd)'"></ng2-odometer>
                     </h3>
                     <p>
-                        <strong>RPC Port:</strong>
+                        <strong>RPC端口:</strong>
                         <span>{{getNodeInfoList?.connectionInfo?.port}} </span>
                         <strong>&nbsp;</strong>
-                        <strong> IP Address:</strong>
+                        <strong> IP地址:</strong>
                         <span>{{getNodeInfoList?.connectionInfo?.ip}}</span>
                     </p>
                 </div>
@@ -63,7 +63,7 @@
 </div>
 
 <div class="grid-container animated " *ngIf="isNodeData" [ngClass]="(isSelected == 'nodeClass')?'fadeIn':''">
-    <h2>Node Table</h2>
+    <h2>节点列表</h2>
     <div class="table-responsive">
         <table class="table table-hover">
             <thead>
@@ -71,12 +71,12 @@
                     <th>
                         &nbsp;
                     </th>
-                    <th>Node Name</th>
-                    <th>Role</th>
-                    <th>Public Key</th>
-                    <th>IP Address</th>
-                    <th>Node Latency</th>
-                    <th>Enode ID</th>
+                    <th>节点名称</th>
+                    <th>身份</th>
+                    <th>公钥</th>
+                    <th>IP 地址</th>
+                    <th>节点延迟</th>
+                    <th>节点编号</th>
                 </tr>
             </thead>
             <tbody>
@@ -104,7 +104,7 @@
                     <em>
             <img src="/assets/images/blockIcons.png" />
           </em>
-                    <span>Blocks</span>
+                    <span>区块</span>
                     <input (keyup)="getSearchedData(number)" class="serach" [(ngModel)]='number'>
                 </h3>
                 <div class="block-inner-list-wrapper" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" [scrollWindow]="false" (scrolled)="onScroll()">
@@ -137,7 +137,7 @@
                     <em>
             <img src="/assets/images/transcationIcons.png" />
           </em>
-                    <span>Transactions</span>
+                    <span>交易</span>
                     <input (keyup)="getSearchedTxNData(transactionHash)" class="serach" [(ngModel)]='transactionHash'>
                 </h3>
                 <div class="block-inner-list-wrapper">
@@ -181,7 +181,7 @@
     </div>
 </div>
 <div class="grid-container contract-list-container animated " *ngIf="isIpBlock" [ngClass]="(isSelected == 'ipClass')?'fadeIn':''">
-    <h2>Contract List</h2>
+    <h2>合约列表</h2>
     <input class="serach" [(ngModel)]='searchQuery' placeholder="Search contract list by contract address..." />
     <div class="ip-contract-list">
         <div class="table-responsive">
@@ -189,12 +189,12 @@
                 <thead>
                     <tr>
                         <th></th>
-                        <th>Contract Address</th>
-                        <th>Contract Name</th>
-                        <th><a (click)="OrderByType = !OrderByType"> Deployment Date <span class="icon-sort" [ngClass]="{'icon-sort-rotate': OrderByType}">&nbsp;</span></a></th>
-                        <th>Sender</th>
-                        <th>Contract Type</th>
-                        <th>Description</th>
+                        <th>合约地址</th>
+                        <th>合约名称</th>
+                        <th><a (click)="OrderByType = !OrderByType"> 部署日期 <span class="icon-sort" [ngClass]="{'icon-sort-rotate': OrderByType}">&nbsp;</span></a></th>
+                        <th>发送者</th>
+                        <th>合约类型</th>
+                        <th>描述</th>
                         <th>ABI</th>
                     </tr>
                 </thead>
@@ -215,7 +215,7 @@
                         <td title="{{item?.description}}">{{item?.description || '--'}}</td>
                         <td title="{{item?.abi}}">
                             <code *ngIf="item?.abi != ''" class="eclipse-text">{{item?.abi || '--'}}</code>
-                            <a *ngIf="item?.abi == ''" href="javascript:void(0)" (click)="uploadABIModal(item,false)" class="btn btn-success">Upload ABI</a>
+                            <a *ngIf="item?.abi == ''" href="javascript:void(0)" (click)="uploadABIModal(item,false)" class="btn btn-success">上传 ABI</a>
                         </td>
                     </tr>
                 </tbody>

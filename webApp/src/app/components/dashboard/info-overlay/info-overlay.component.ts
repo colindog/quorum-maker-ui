@@ -33,12 +33,12 @@ export class InfoOverlayComponent implements OnInit, OnDestroy {
     }
     this._CommonService.updateNode(params).subscribe(data => {
       this.msgs = [];
-      this.msgs.push({ severity: 'success', summary: 'Success Message', detail: 'Node Name and Role has been updated successfully' });
+      this.msgs.push({ severity: 'success', summary: 'Success Message', detail: '成功更新节点名称和身份!' });
       console.log('this.msgs.....>', this.msgs);
     },
       error => {
         this.msgs = [];
-        this.msgs.push({ severity: 'error', summary: '', detail: 'Node Name and Role update Failed!' });
+        this.msgs.push({ severity: 'error', summary: '', detail: '节点名称和身份更新失败!' });
         console.log('error', error);
       }
     );
